@@ -3,24 +3,22 @@
 {% block content %}
 <br>
 <div class="container">
-    <div class="text-end">
-        <a class="btn btn-outline-secondary" href="{% url 'mailings:client_create' %}">Добавить клиента</a>
-    </div>
+
     <br>
     <div class="row">
                 {% for object in object_list %}
                 <div class="col">
                     <div class="card text-center">
                         <div class="card-header">
-                            Клиент: {{object.name}}
+                            Лог от: {{object.date_time}}
                         </div>
                         <div class="card-body">
 
-                            <p class="card-text">Email: {{object.email}}</p>
-                            <p class="card-text">Примечание: {{object.comment}}</p>
+                            <p class="card-text">Статус: {{object.status}}</p>
+                            <p class="card-text">Ответ сервера: {{object.ansver_server}}</p>
 
 
-                            <a href="{% url 'mailings:client_detail' object.pk %}" class="btn btn-primary">Подробнее</a>
+
                             <div>
                                 <br>
                                 <p>Владелец:</p>
@@ -29,7 +27,7 @@
                         </div>
                         <div class="card-footer">
                             <h6>
-
+                                Рассылка: {{object.mailing.message.title}}
                             </h6>
                         </div>
 

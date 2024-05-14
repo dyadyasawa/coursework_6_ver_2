@@ -1,3 +1,4 @@
+
 from django.contrib import admin
 
 from mailings.models import Client, Message, Mailing, Log
